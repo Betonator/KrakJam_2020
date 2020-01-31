@@ -8,7 +8,8 @@ public class DogHeadController : MonoBehaviour
     [SerializeField]
     private Transform defaultPosition;
     public int dogIndex = 1;
-    public float headRotationPower = 5f;
+    public float stability = 0.3f;
+    public float speed = 2f;
 
     void Start()
     {
@@ -19,11 +20,14 @@ public class DogHeadController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("HorizontalHead" + dogIndex);
         float vertical = Input.GetAxis("VerticalHead" + dogIndex);
+        Vector3 inputRotationVector = new Vector3(-vertical, horizontal, 0.0f).normalized * speed;
         //head stabilizer
-        float rotX = defaultPosition.eulerAngles.x - transform.eulerAngles.x;
-        float rotY = defaultPosition.eulerAngles.y - transform.eulerAngles.y;
-        float rotZ = defaultPosition.eulerAngles.z - transform.eulerAngles.z;
-        dogHeadBody.AddRelativeTorque(new Vector3(rotX, rotY, rotZ)*headRotationPower/2 +
-            new Vector3(-vertical, horizontal, 0.0f).normalized * headRotationPower);
+        /*Vector3 predictedUp = Quaternion.AngleAxis(
+        dogHeadBody.angularVelocity.magnitude * Mathf.Rad2Deg * stability / speed,
+        dogHeadBody.angularVelocity
+        ) * transform.up;
+        Vector3 torqueVector = Vector3.Cross(predictedUp, Vector3.up);*/
+        dogHeadBody.AddRelativeTorque(inputRotationVector);
+        //dogHeadBody.AddTorque(torqueVector);
     }
 }
