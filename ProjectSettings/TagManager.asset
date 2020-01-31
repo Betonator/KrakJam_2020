@@ -4,7 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Patyk
+  - Grapple
+  - Stick
   layers:
   - Default
   - TransparentFX
