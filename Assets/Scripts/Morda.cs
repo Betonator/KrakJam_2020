@@ -24,20 +24,50 @@ public class Morda : MonoBehaviour
 
     private void PickUpPatyk() {
         if(isPatykPickable) {
-            Debug.Log("dupa");
             Debug.Log(pickablePatyk);
-            pickablePatyk.transform.position += Vector3.up * 1.0f;
-            FixedJoint[] fix = pickablePatyk.GetComponentsInChildren<FixedJoint>();
-            fix[0].connectedBody = this.GetComponent<Rigidbody>();
+            Transform[] points = pickablePatyk.GetComponentsInChildren<Transform>();
+
+            Transform point = FindNearestPoint(points);
+            Debug.Log( point.name+point.position);
+            // pickablePatyk.transform.position += Vector3.up * 1.0f;
+            pickablePatyk.transform.position -= point.localPosition;
+
+            FixedJoint fix = pickablePatyk.GetComponentInChildren<FixedJoint>();
+            fix.connectedBody = this.GetComponent<Rigidbody>();
         }
+    }
+
+    private Transform FindNearestPoint(Transform[] points) 
+    {
+        float distance;
+        Transform closestPoint;
+        foreach(Transform point in points) {
+            if(point.tag == "Patyk") {
+                continue;
+            }
+            float thisDistance = Vector3.Distance(this.GetComponent<Rigidbody>().position, point.position);
+            Debug.Log(point.name + thisDistance);
+            if(distance > thisDistance) 
+            {
+                distance = thisDistance;
+                closestPoint = point;
+            }
+        }
+        return closestPoint;
     }
 
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.tag == "Patyk") {
-            Debug.Log(collision.name);
             isPatykPickable = true;
             pickablePatyk = collision.gameObject.GetComponent<Rigidbody>();
+        }
+    }
+
+    private void OnTriggerExit(Collider collision) {
+        if (collision.tag == "Patyk") {
+            isPatykPickable = false;
+            pickablePatyk = null;
         }
     }
 }
