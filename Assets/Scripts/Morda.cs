@@ -32,12 +32,12 @@ public class Morda : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.name == "Patyk") {
-            Debug.Log(collision.collider.name);
+        if (collision.tag == "Patyk") {
+            Debug.Log(collision.name);
             isPatykPickable = true;
-            pickablePatyk = collision.rigidbody;
+            pickablePatyk = collision.gameObject.GetComponent<Rigidbody>();
         }
     }
 }
