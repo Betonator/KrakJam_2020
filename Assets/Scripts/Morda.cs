@@ -27,6 +27,8 @@ public class Morda : MonoBehaviour
             Debug.Log("dupa");
             Debug.Log(pickablePatyk);
             pickablePatyk.transform.position += Vector3.up * 1.0f;
+            FixedJoint[] fix = pickablePatyk.GetComponentsInChildren<FixedJoint>();
+            fix[0].connectedBody = this.GetComponent<Rigidbody>();
         }
     }
 
