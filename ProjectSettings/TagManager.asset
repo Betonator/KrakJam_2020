@@ -4,8 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
+  - Grapple
+  - Stick
   - BOBR
+  - Ground
   layers:
   - Default
   - TransparentFX
