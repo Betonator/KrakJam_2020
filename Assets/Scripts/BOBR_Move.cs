@@ -5,6 +5,11 @@ using UnityEngine;
 public class BOBR_Move : MonoBehaviour
 {
 
+    bool alive;
+
+    //HP
+    public float HP = 100f;
+
     //Assingables
     public Transform POI;
 
@@ -49,9 +54,18 @@ public class BOBR_Move : MonoBehaviour
     void Start()
     {
         foundPOI = 0;
-        
+        alive = true;
     }
 
+    public void TakeDMG(float dmg)
+    {
+        HP -= dmg;
+        if(HP <= 0)
+        {
+            POI = transform.parent.GetChild(1).transform;
+            alive = false;
+        }
+    }
     
 
     // Update is called once per frame
@@ -62,19 +76,28 @@ public class BOBR_Move : MonoBehaviour
     }
     void FixedUpdate()
     {
+        
         Movement();
     }
 
 
     private void CheckDistanceToPOI()
     {
-        if(Vector3.Distance(transform.position,POI.position)<desiredDistToPOI && Vector3.Distance(transform.position, POI.position)>nearPOI)
+        if (alive)
         {
-            foundPOI = 1;  
-        }
-        else
+
+
+            if (Vector3.Distance(transform.position, POI.position) < desiredDistToPOI && Vector3.Distance(transform.position, POI.position) > nearPOI)
+            {
+                foundPOI = 1;
+            }
+            else
+            {
+                foundPOI = 0;
+            }
+        }else
         {
-            foundPOI = 0;
+            foundPOI = 1;
         }
     }
 

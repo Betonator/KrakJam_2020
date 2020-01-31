@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Grapple
   - Stick
+  - BOBR
+  - Ground
   layers:
   - Default
   - TransparentFX
