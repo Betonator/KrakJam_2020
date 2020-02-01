@@ -6,6 +6,7 @@ public class BOBR_Move : MonoBehaviour
 {
 
     bool alive;
+    bool isGrounded;
 
     //HP
     public float HP = 100f;
@@ -15,11 +16,17 @@ public class BOBR_Move : MonoBehaviour
 
     //adidtional gravity
     public float aditionalGravity = 20f;
+    bool isAttacking;
     
 
     //Other
     private Rigidbody rb;
 
+    //Attacking
+    public float jumpForce = 550f;
+    public float attackForce = 330f;
+    public float attackDelay = 5f;
+    public float timeToAttack;
 
     //finding POI range
     public float desiredDistToPOI = 100f;
@@ -46,15 +53,28 @@ public class BOBR_Move : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        isGrounded = false;
+
+
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+
     }
 
 
-
-    // Start is called before the first frame update
-    void Start()
+        // Start is called before the first frame update
+        void Start()
     {
         foundPOI = 0;
         alive = true;
+        isAttacking = false;
+        timeToAttack = Time.time;
     }
 
     public void TakeDMG(float dmg)
@@ -71,25 +91,48 @@ public class BOBR_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckDistanceToPOI();
+        Debug.Log(isGrounded);
         Look();
     }
     void FixedUpdate()
     {
-        
+        CheckDistanceToPOI();
         Movement();
     }
 
 
+
+
+    private void Attack()
+    {
+        isGrounded = false;
+        rb.AddForce(transform.forward * attackForce * 1.5f, ForceMode.Impulse);
+        rb.AddForce(transform.up * jumpForce * 1.5f,ForceMode.Impulse);
+        
+    }
+
+
+
+    //Checking distance to POI
     private void CheckDistanceToPOI()
     {
         if (alive)
         {
 
 
-            if (Vector3.Distance(transform.position, POI.position) < desiredDistToPOI && Vector3.Distance(transform.position, POI.position) > nearPOI)
+            if (Vector3.Distance(transform.position, POI.position) < desiredDistToPOI )
             {
                 foundPOI = 1;
+                if (Vector3.Distance(transform.position, POI.position) < nearPOI)
+                {
+                    if (Time.time > timeToAttack)
+                    {
+                        Attack();
+                        timeToAttack = Time.time + attackDelay;
+                        isAttacking = true;
+                    }
+                }
+               
             }
             else
             {
@@ -139,7 +182,7 @@ public class BOBR_Move : MonoBehaviour
             rb.AddForce(moveSpeed * transform.forward * Time.deltaTime * -mag.y * counterMovement);
         }
 
-        //Limit diagonal running. This will also cause a full stop if sliding fast and un-crouching, so not optimal.
+        //Limit diagonal running. 
         if (Mathf.Sqrt((Mathf.Pow(rb.velocity.x, 2) + Mathf.Pow(rb.velocity.z, 2))) > maxSpeed)
         {
             float fallspeed = rb.velocity.y;
@@ -153,18 +196,21 @@ public class BOBR_Move : MonoBehaviour
         //Extra Gravity
         rb.AddForce(Vector3.down * Time.deltaTime * aditionalGravity);
 
-        //Find actual velocity relative to where player is looking
+        //Find actual velocity relative to where BOBR is looking
         Vector2 mag = FindVelRelativeToLook();
         float xMag = mag.x, yMag = mag.y;
-        CounterMovement(mag);
+
+        if (isGrounded)
+        {
+            CounterMovement(mag);
 
 
 
-        //If speed is larger than maxspeed, cancel out the input so you don't go over max speed
-        if (foundPOI > 0 && yMag > maxSpeed) foundPOI = 0;
-        if (foundPOI < 0 && yMag < -maxSpeed) foundPOI = 0;
+            //If speed is larger than maxspeed, cancel out the input so you don't go over max speed
+            if (foundPOI > 0 && yMag > maxSpeed) foundPOI = 0;
+            if (foundPOI < 0 && yMag < -maxSpeed) foundPOI = 0;
 
-
+        }
 
 
         //apply force
