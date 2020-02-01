@@ -44,9 +44,10 @@ public class Muzzle : MonoBehaviour
             Transform closestPoint = FindNearestPoint(otherPoints.ToArray());
             pickableStick.transform.position = HeadEnd.position;
             pickableStick.transform.rotation = HeadEnd.rotation;
-
-            pickableStick.transform.position = closestPoint.position;
-
+            
+            Vector3 closestPointVectorToMove = new Vector3(pickableStick.transform.position.x - closestPoint.position.x, pickableStick.transform.position.y - closestPoint.position.y, pickableStick.transform.position.z - closestPoint.position.z);
+            
+            pickableStick.transform.position += closestPointVectorToMove;
             FixedJoint fix = pickableStick.gameObject.AddComponent<FixedJoint>() as FixedJoint;
             fix.connectedBody = this.GetComponent<Rigidbody>();
             
@@ -56,10 +57,10 @@ public class Muzzle : MonoBehaviour
 
     private Transform FindNearestPoint(Transform[] points) 
     {
-        float distance =  Vector3.Distance(this.GetComponent<Rigidbody>().position, points[0].position);
-        Transform closestPoint = points[0];
+        float distance = Mathf.Infinity; // Vector3.Distance(HeadEnd.position, points[0].position);
+        Transform closestPoint = null;
         foreach(Transform point in points) {
-            float thisDistance = Vector3.Distance(this.GetComponent<Rigidbody>().position, point.position);
+            float thisDistance = Vector3.Distance(point.position, HeadEnd.position);
             if(distance > thisDistance) 
             {
                 distance = thisDistance;
