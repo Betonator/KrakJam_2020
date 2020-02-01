@@ -5,8 +5,6 @@ using UnityEngine;
 public class DogHeadController : MonoBehaviour
 {
     Rigidbody dogHeadBody;
-    [SerializeField]
-    private Transform defaultPosition;
     public int dogIndex = 1;
     public float stability = 0.3f;
     public float speed = 2f;
