@@ -86,12 +86,19 @@ public class BOBR_Move : MonoBehaviour
 
     private void ShearchForNearbyDOGGO()
     {
+        
         GameObject[] doggos = GameObject.FindGameObjectsWithTag("Player");
+
         float distanceToDoggo = Mathf.Infinity;
 
         foreach (GameObject dog in doggos)
-        {
-
+        { 
+            float actDist = Vector3.Distance(transform.position, dog.transform.position);
+            if (actDist < distanceToDoggo)
+            { 
+                distanceToDoggo = actDist;
+                POI = dog.transform; 
+            }
         }
 
 
@@ -104,6 +111,7 @@ public class BOBR_Move : MonoBehaviour
         alive = true;
         isAttacking = false;
         timeToAttack = Time.time;
+        ShearchForNearbyDOGGO();
 
     }
 
@@ -122,6 +130,10 @@ public class BOBR_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(alive)
+        {
+            ShearchForNearbyDOGGO();
+        }
         Look();
         if(stunTimer > 0.0f){
             stunTimer -= Time.deltaTime;
