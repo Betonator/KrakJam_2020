@@ -431,11 +431,11 @@ MonoBehaviour:
   posOffset: {x: 0, y: 0, z: 0}
   rotOffset: {x: 0, y: 0, z: 0}
   Houses:
-  - {fileID: -927199367670048503, guid: 4f24a00c88d10464985f3d806814100d, type: 3}
-  - {fileID: -927199367670048503, guid: f029b1e2438f1d0459ec3fdd5890f782, type: 3}
-  - {fileID: -927199367670048503, guid: d8dbc5d5564af6240b4859a5ef30bb06, type: 3}
-  - {fileID: -927199367670048503, guid: 19b60d0fb2dc62641a7826f37f5081e6, type: 3}
-  - {fileID: -927199367670048503, guid: e154abcf76fd0814ea3a499d7333af04, type: 3}
+  - {fileID: 5915798591164569448, guid: 2986027eeab0ecd408349c806a873eed, type: 3}
+  - {fileID: 9222464787523367246, guid: e95a937f3e68d094e825724d1993d1d8, type: 3}
+  - {fileID: 1392945001406932579, guid: a75c736568650d540b8b4b3a76c5315d, type: 3}
+  - {fileID: 1531592402302323528, guid: 0b5ed30596c2cf54aaa06aeb065b5e1b, type: 3}
+  - {fileID: 7654081333732351300, guid: d00be3d74270ab54eb85477acf1a7dfa, type: 3}
 --- !u!4 &847542823
 Transform:
   m_ObjectHideFlags: 0
