@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5541299387526706083}
   - component: {fileID: 5541299387526706082}
+  - component: {fileID: 1117009532788511549}
   m_Layer: 0
   m_Name: BUDA_Holder
   m_TagString: Untagged
@@ -25,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5541299387526706081}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.178177, y: 4.62, z: -9.47}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -54,3 +55,16 @@ MonoBehaviour:
   - {fileID: 1392945001406932579, guid: a75c736568650d540b8b4b3a76c5315d, type: 3}
   - {fileID: 1531592402302323528, guid: 0b5ed30596c2cf54aaa06aeb065b5e1b, type: 3}
   - {fileID: 7654081333732351300, guid: d00be3d74270ab54eb85477acf1a7dfa, type: 3}
+--- !u!65 &1117009532788511549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541299387526706081}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.71, y: 5.98, z: 7.47}
+  m_Center: {x: 0, y: 0, z: 0}
