@@ -142,10 +142,7 @@ public class BOBR_Move : MonoBehaviour
     void FixedUpdate()
     {
         CheckDistanceToPOI();
-        if(stunTimer <= 0.0f){
-            stunStars.SetActive(false);
-            Movement();
-        }
+        Movement();
     }
 
 
@@ -264,9 +261,12 @@ public class BOBR_Move : MonoBehaviour
         }
 
 
-        //apply force
-        rb.AddForce(transform.forward * foundPOI * moveSpeed * Time.deltaTime);
-       
+        if (stunTimer <= 0.0f)
+        {
+            stunStars.SetActive(false);
+            //apply force
+            rb.AddForce(transform.forward * foundPOI * moveSpeed * Time.deltaTime);
+        }
 
     }
 }
