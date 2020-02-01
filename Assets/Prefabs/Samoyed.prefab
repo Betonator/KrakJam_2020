@@ -592,6 +592,8 @@ GameObject:
   - component: {fileID: 9111962883339501682}
   - component: {fileID: 9111962883339501680}
   - component: {fileID: 9111962883339501681}
+  - component: {fileID: 1810327221}
+  - component: {fileID: 1810327216}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -661,22 +663,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: -71.47829
+    limit: -77.03503
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 56.38092
+    limit: 73.59618
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 50.80522
+    limit: 66.63776
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 55.165344
+    limit: 72.906685
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -738,8 +740,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogIndex: 1
-  stability: 0.25
-  speed: 4
+  stability: 1
+  speed: 250
+--- !u!65 &1810327221
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107591383219384888}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 3, z: 3}
+  m_Center: {x: 0, y: 1, z: -1}
+--- !u!114 &1810327216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107591383219384888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72c6aa3974f39ca448f2c19e7c7c950b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HeadEnd: {fileID: 127798263122054613}
 --- !u!1 &4385983837319237709
 GameObject:
   m_ObjectHideFlags: 0
