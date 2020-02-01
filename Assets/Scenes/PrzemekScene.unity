@@ -872,6 +872,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Samoyed
       objectReference: {fileID: 0}
+    - target: {fileID: 3770854811818660413, guid: 267183812e4732a41bc143b7f0fb5efb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 8296172669398147179, guid: 267183812e4732a41bc143b7f0fb5efb,
         type: 3}
       propertyPath: dogCamera
@@ -904,6 +909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  isPickedUp: 0
   stickDMG: 50
 --- !u!65 &1991285900
 BoxCollider:
@@ -934,6 +940,9 @@ MonoBehaviour:
   dogSpeed: 3
   rotateSpeed: 3
   dogCamera: {fileID: 347944320}
+  maxHP: 2
+  currentHP: 2
+  stunInterval: 5
 --- !u!1 &685433530719576986
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,6 +1118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72c6aa3974f39ca448f2c19e7c7c950b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerIndex: 1
   HeadEnd: {fileID: 706180903}
 --- !u!23 &685433530770900776
 MeshRenderer:

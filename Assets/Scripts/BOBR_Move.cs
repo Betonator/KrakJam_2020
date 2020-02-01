@@ -51,6 +51,8 @@ public class BOBR_Move : MonoBehaviour
     private float threshold = 0.01f;
 
 
+    public int beaverDMG = 1;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -71,6 +73,12 @@ public class BOBR_Move : MonoBehaviour
             if(patyk.isPickedUp) {
                 TakeDMG(patyk.stickDMG);
             }
+        }
+        if(other.gameObject.tag == "Player")
+        {
+            DogMovement doggo = other.gameObject.GetComponent<DogMovement>();
+            doggo.TakeDMG(beaverDMG);
+
         }
 
     }
