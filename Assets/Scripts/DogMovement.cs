@@ -21,9 +21,12 @@ public class DogMovement : MonoBehaviour
     public float stunInterval = 5.0f;
     private float stunTimer = 0.0f;
 
+    private Animator anim;
+
     void Start()
     {
         dogBody = GetComponent<Rigidbody>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -36,12 +39,15 @@ public class DogMovement : MonoBehaviour
             runningMultiplier = 2;
             energy -= Time.deltaTime*4;
             energy = Mathf.Clamp(energy,0.0f, maxEnergy);
+            anim.SetBool("sprinting", true);
+
         }
         else
         {
             runningMultiplier = 1;
             energy += Time.deltaTime;
             energy = Mathf.Clamp(energy, 0.0f, maxEnergy);
+            anim.SetBool("sprinting", false);
         }
     }
 
@@ -51,6 +57,14 @@ public class DogMovement : MonoBehaviour
             stunStars.SetActive(false);
             float horizontal = Input.GetAxis("Horizontal" + dogIndex);
             float vertical = -Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
+
+
+            if(vertical == 0.0f) {
+                anim.SetBool("runing", false);
+            }
+            else{
+                anim.SetBool("runing", true);
+            }
             if (vertical >= 1.5f)
             {
                 dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.05f;
@@ -61,6 +75,7 @@ public class DogMovement : MonoBehaviour
             }
             transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * rotateSpeed);
             dogBody.velocity = transform.forward*vertical*dogSpeed + new Vector3(0.0f, dogBody.velocity.y, 0.0f);
+
         }
     }
 
