@@ -75,8 +75,8 @@ public class TESTMove : MonoBehaviour
 
         float vel = Vector3.Distance(pos, rb.position);
         //Debug.Log(vel);
-        float translation = Input.GetAxis("Vertical") * speed;
-        float rotation = Input.GetAxis("Horizontal") * rotationSpeed;
+        float translation = Input.GetAxis("Vertical1") * speed;
+        float rotation = Input.GetAxis("Horizontal1") * rotationSpeed;
         translation *= Time.deltaTime;
         rotation *= Time.deltaTime;
 
