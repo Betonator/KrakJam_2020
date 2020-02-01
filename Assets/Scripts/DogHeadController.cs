@@ -18,7 +18,7 @@ public class DogHeadController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("HorizontalHead" + dogIndex);
         float vertical = Input.GetAxis("VerticalHead" + dogIndex);
-        Vector3 inputRotationVector = new Vector3(-vertical, horizontal, 0.0f).normalized * speed;
+        Vector3 inputRotationVector = new Vector3(vertical, 0.0f, horizontal).normalized * speed;
         //head stabilizer
         /*Vector3 predictedUp = Quaternion.AngleAxis(
         dogHeadBody.angularVelocity.magnitude * Mathf.Rad2Deg * stability / speed,
