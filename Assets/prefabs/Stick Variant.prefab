@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2601985708364021963, guid: 54b8c2ab837fcb2489fa06d0e4d4f708,
         type: 3}
       propertyPath: m_Name
-      value: Stick
+      value: Stick Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2601985708364021963, guid: 54b8c2ab837fcb2489fa06d0e4d4f708,
         type: 3}
