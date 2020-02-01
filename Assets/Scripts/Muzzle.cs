@@ -18,10 +18,10 @@ public class Muzzle : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetAxis("Pickup" + playerIndex) == 1.0f) {
+        if(Input.GetKeyDown("joystick " + playerIndex + " button 5")) {
             PickUpStick();
         }
-        else if(Input.GetAxis("Pickup" + playerIndex) == 0.0f) {
+        if(Input.GetKeyUp("joystick " + playerIndex + " button 5")) {
             LoseStick();
         }
     }
