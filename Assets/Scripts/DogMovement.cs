@@ -60,7 +60,7 @@ public class DogMovement : MonoBehaviour
                 dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
             }
             transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * rotateSpeed);
-            dogBody.velocity = transform.forward*vertical*dogSpeed + new Vector3(0.0f, dogBody.velocity.y, 0.0f);
+            dogBody.velocity = new Vector3(0.0f, dogBody.velocity.y, 0.0f) + transform.forward*vertical*dogSpeed;
         }
     }
 

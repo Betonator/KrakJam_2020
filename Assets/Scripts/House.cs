@@ -33,7 +33,6 @@ public class House : MonoBehaviour
         if (other.CompareTag("Stick"))
         {
             AddPoints(other.gameObject);
-            CheckUpgrade();
             Destroy(other.gameObject);
         }
     }
