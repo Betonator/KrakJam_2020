@@ -21,7 +21,7 @@ public class DogMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxis("Sprint" + dogIndex) > 0f)
+        if (Input.GetAxis("Sprint" + dogIndex) > 0.5f)
         {
             runningMultiplier = 2;
             energy -= Time.deltaTime;
@@ -38,7 +38,7 @@ public class DogMovement : MonoBehaviour
     void FixedUpdate()
     {
         float horizontal = Input.GetAxis("Horizontal" + dogIndex);
-        float vertical = Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
+        float vertical = -Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
         if (vertical >= 1.5f)
         {
             dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.05f;
