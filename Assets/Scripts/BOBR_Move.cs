@@ -200,6 +200,10 @@ public class BOBR_Move : MonoBehaviour
         }else
         {
             foundPOI = 1;
+            if (Vector3.Distance(transform.position, POI.position) < nearPOI)
+            {
+                Destroy(transform.parent.gameObject);
+            }
         }
     }
 
