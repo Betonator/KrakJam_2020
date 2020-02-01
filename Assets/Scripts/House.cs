@@ -34,12 +34,14 @@ public class House : MonoBehaviour
         {
             AddPoints(other.gameObject);
             CheckUpgrade();
+            Destroy(other.gameObject);
         }
     }
 
     public void AddPoints(GameObject Stick)
     {
-        //Wez punkty z patyka
+        points += Stick.GetComponent<Stick>().score;
+        CheckUpgrade();
     }
 
     private void CheckUpgrade()
