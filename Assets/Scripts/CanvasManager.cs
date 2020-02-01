@@ -83,6 +83,10 @@ public class CanvasManager : MonoBehaviour
 
     public void Reload()
     {
+        Cursor.visible = false;
+        Time.timeScale = 1;
+        gameOverPanel.active = false;
+        gameFreezePanel.active = false;
         Destroy(this.gameObject);
         SceneManager.LoadScene(0);
     }
