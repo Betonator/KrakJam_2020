@@ -6,16 +6,22 @@ using UnityEditor.SceneManagement;
 
 public class Muzzle : MonoBehaviour
 {
+    public int playerIndex = 1;
     private bool isStickPickable = false;
     private Rigidbody pickableStick = null;
     public Transform HeadEnd = null;
-    // Update is called once per frame
+
+    private void Start()
+    {
+        playerIndex = GetComponent<DogHeadController>().dogIndex;
+    }
+
     void Update()
     {
-        if(Input.GetButtonDown("PickUp")) {
+        if(Input.GetAxis("Pickup" + playerIndex) == 1.0f) {
             PickUpStick();
         }
-        if(Input.GetButtonUp("PickUp")) {
+        else if(Input.GetAxis("Pickup" + playerIndex) == 0.0f) {
             LoseStick();
         }
     }
@@ -25,13 +31,14 @@ public class Muzzle : MonoBehaviour
             if(pickableStick.GetComponent<FixedJoint>().connectedBody == this.GetComponent<Rigidbody>()){
                 FixedJoint fix = pickableStick.GetComponent<FixedJoint>();
                 Destroy(fix);
+                pickableStick.GetComponent<Stick>().SetIsPickedUp(false);
                 pickableStick = null;
             }
         }
     }
 
     private void PickUpStick() {
-        if(isStickPickable) {
+        if(isStickPickable && !pickableStick.GetComponent<Stick>().isPickedUp) {
             Transform[] points = pickableStick.GetComponentsInChildren<Transform>();
             List<Transform> otherPoints = new List<Transform>();
 
@@ -50,7 +57,7 @@ public class Muzzle : MonoBehaviour
             pickableStick.transform.position += closestPointVectorToMove;
             FixedJoint fix = pickableStick.gameObject.AddComponent<FixedJoint>() as FixedJoint;
             fix.connectedBody = this.GetComponent<Rigidbody>();
-            
+            pickableStick.GetComponent<Stick>().SetIsPickedUp(true);
             isStickPickable = false;
         }
     }

@@ -643,7 +643,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0029503405, y: 1.5427364, z: 1.9238505}
+  m_ConnectedAnchor: {x: 0.0029506683, y: 1.5427363, z: 1.92385}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -663,22 +663,22 @@ ConfigurableJoint:
     spring: 0
     damper: 0
   m_LowAngularXLimit:
-    limit: -71.47829
+    limit: -77.03503
     bounciness: 0
     contactDistance: 0
   m_HighAngularXLimit:
-    limit: 56.38092
+    limit: 73.59618
     bounciness: 0
     contactDistance: 0
   m_AngularYZLimitSpring:
     spring: 0
     damper: 0
   m_AngularYLimit:
-    limit: 50.80522
+    limit: 66.63776
     bounciness: 0
     contactDistance: 0
   m_AngularZLimit:
-    limit: 55.165344
+    limit: 72.906685
     bounciness: 0
     contactDistance: 0
   m_TargetPosition: {x: 0, y: 0, z: 0}
@@ -740,8 +740,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogIndex: 1
-  stability: 0.25
-  speed: 4
+  stability: 1
+  speed: 250
 --- !u!65 &1810327221
 BoxCollider:
   m_ObjectHideFlags: 0

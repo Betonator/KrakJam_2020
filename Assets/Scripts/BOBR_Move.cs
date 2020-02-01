@@ -64,6 +64,13 @@ public class BOBR_Move : MonoBehaviour
         {
             isGrounded = true;
         }
+        if(other.gameObject.tag == "Stick")
+        {
+            Stick patyk = other.gameObject.GetComponent<Stick>();
+            if(patyk.isPickedUp) {
+                TakeDMG(patyk.stickDMG);
+            }
+        }
 
     }
 
@@ -91,7 +98,6 @@ public class BOBR_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isGrounded);
         Look();
     }
     void FixedUpdate()
