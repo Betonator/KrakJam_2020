@@ -84,6 +84,19 @@ public class BOBR_Move : MonoBehaviour
     }
 
 
+    private void ShearchForNearbyDOGGO()
+    {
+        GameObject[] doggos = GameObject.FindGameObjectsWithTag("Player");
+        float distanceToDoggo = Mathf.Infinity;
+
+        foreach (GameObject dog in doggos)
+        {
+
+        }
+
+
+    }
+
         // Start is called before the first frame update
         void Start()
     {
@@ -91,6 +104,7 @@ public class BOBR_Move : MonoBehaviour
         alive = true;
         isAttacking = false;
         timeToAttack = Time.time;
+
     }
 
     public void TakeDMG(float dmg)
