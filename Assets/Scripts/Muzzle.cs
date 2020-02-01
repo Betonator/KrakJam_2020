@@ -25,6 +25,7 @@ public class Muzzle : MonoBehaviour
             if(pickableStick.GetComponent<FixedJoint>().connectedBody == this.GetComponent<Rigidbody>()){
                 FixedJoint fix = pickableStick.GetComponent<FixedJoint>();
                 Destroy(fix);
+                pickableStick.GetComponent<Stick>().SetIsPickedUp(false);
                 pickableStick = null;
             }
         }
@@ -50,7 +51,7 @@ public class Muzzle : MonoBehaviour
             pickableStick.transform.position += closestPointVectorToMove;
             FixedJoint fix = pickableStick.gameObject.AddComponent<FixedJoint>() as FixedJoint;
             fix.connectedBody = this.GetComponent<Rigidbody>();
-            
+            pickableStick.GetComponent<Stick>().SetIsPickedUp(true);
             isStickPickable = false;
         }
     }
