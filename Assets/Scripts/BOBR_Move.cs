@@ -8,6 +8,9 @@ public class BOBR_Move : MonoBehaviour
     bool alive;
     bool isGrounded;
 
+    public float stunInterval = 5.0f;
+    private float stunTimer = 0.0f;
+
     //HP
     public float HP = 100f;
 
@@ -34,8 +37,6 @@ public class BOBR_Move : MonoBehaviour
 
     //check if BOBR found his enemy
     int foundPOI;
-
-
 
     //Rotation and look
    
@@ -87,6 +88,7 @@ public class BOBR_Move : MonoBehaviour
     public void TakeDMG(float dmg)
     {
         HP -= dmg;
+
         if(HP <= 0)
         {
             POI = transform.parent.GetChild(1).transform;
@@ -99,11 +101,16 @@ public class BOBR_Move : MonoBehaviour
     void Update()
     {
         Look();
+        if(stunTimer > 0.0f){
+            stunTimer -= Time.deltaTime;
+        }
     }
     void FixedUpdate()
     {
         CheckDistanceToPOI();
-        Movement();
+        if(stunTimer <= 0.0f){
+            Movement();
+        }
     }
 
 
@@ -115,6 +122,7 @@ public class BOBR_Move : MonoBehaviour
         rb.AddForce(transform.forward * attackForce * 1.5f, ForceMode.Impulse);
         rb.AddForce(transform.up * jumpForce * 1.5f,ForceMode.Impulse);
         
+        stunTimer = stunInterval;
     }
 
 
