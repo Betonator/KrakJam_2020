@@ -32,7 +32,7 @@ public class Muzzle : MonoBehaviour
     }
 
     private void PickUpStick() {
-        if(isStickPickable) {
+        if(isStickPickable && !pickableStick.GetComponent<Stick>().isPickedUp) {
             Transform[] points = pickableStick.GetComponentsInChildren<Transform>();
             List<Transform> otherPoints = new List<Transform>();
 

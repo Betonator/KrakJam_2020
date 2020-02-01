@@ -5,8 +5,9 @@ using UnityEngine;
 public class Stick : MonoBehaviour
 {
     public int score = 0;
-    private bool isPickedUp = false;
+    public bool isPickedUp = false;
     public float stickDMG = 10.0f;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,14 +18,6 @@ public class Stick : MonoBehaviour
     void Update()
     {
         
-    }
-
-    private void OnTriggerEnter(Collider collider) {
-        if(collider.tag == "BOBR") {
-            if(isPickedUp) {
-                collider.GetComponent<BOBR_Move>().TakeDMG(stickDMG);
-            }
-        }
     }
 
     public void SetIsPickedUp(bool isPicked) {
