@@ -91,8 +91,21 @@ public class BOBR_Move : MonoBehaviour
     }
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void ShearchForNearbyDOGGO()
+    {
+        GameObject[] doggos = GameObject.FindGameObjectsWithTag("Player");
+        float distanceToDoggo = Mathf.Infinity;
+
+        foreach (GameObject dog in doggos)
+        {
+
+        }
+
+
+    }
+
+        // Start is called before the first frame update
+        void Start()
     {
         foundPOI = 0;
         alive = true;
