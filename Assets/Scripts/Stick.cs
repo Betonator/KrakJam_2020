@@ -6,6 +6,7 @@ public class Stick : MonoBehaviour
 {
     public int score = 0;
     private bool isPickedUp = false;
+    public float stickDMG = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,9 @@ public class Stick : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider) {
         if(collider.tag == "BOBR") {
-            Debug.Log("Bobr");
+            if(isPickedUp) {
+                collider.GetComponent<BOBR_Move>().TakeDMG(stickDMG);
+            }
         }
     }
 
