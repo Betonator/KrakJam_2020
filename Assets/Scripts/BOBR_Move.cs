@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class BOBR_Move : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject stunStars;
 
     bool alive;
     bool isGrounded;
 
     public float stunInterval = 5.0f;
     private float stunTimer = 0.0f;
+    public float attackInterval = 4.0f;
+    private float attackTimer = 0.0f;
 
     //HP
     public float HP = 100f;
@@ -76,21 +80,25 @@ public class BOBR_Move : MonoBehaviour
         }
         if(other.gameObject.tag == "Player")
         {
-            DogMovement doggo = other.gameObject.GetComponent<DogMovement>();
-            doggo.TakeDMG(beaverDMG);
-
+            if (attackTimer <= 0.0f)
+            {
+                DogMovement doggo = other.gameObject.GetComponent<DogMovement>();
+                doggo.TakeDMG(beaverDMG);
+                attackTimer = attackInterval;
+            }
         }
 
     }
 
 
-        // Start is called before the first frame update
-        void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         foundPOI = 0;
         alive = true;
         isAttacking = false;
         timeToAttack = Time.time;
+        attackTimer = attackInterval;
     }
 
     public void TakeDMG(float dmg)
@@ -110,13 +118,19 @@ public class BOBR_Move : MonoBehaviour
     {
         Look();
         if(stunTimer > 0.0f){
+            stunStars.SetActive(true);
             stunTimer -= Time.deltaTime;
+        }
+        if (attackTimer > 0.0f)
+        {
+            attackTimer -= Time.deltaTime;
         }
     }
     void FixedUpdate()
     {
         CheckDistanceToPOI();
         if(stunTimer <= 0.0f){
+            stunStars.SetActive(false);
             Movement();
         }
     }
