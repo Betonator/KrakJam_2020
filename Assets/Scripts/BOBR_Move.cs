@@ -8,6 +8,9 @@ public class BOBR_Move : MonoBehaviour
     bool alive;
     bool isGrounded;
 
+    public float stunInterval = 5.0f;
+    private float stunTimer = 0.0f;
+
     //HP
     public float HP = 100f;
 
@@ -35,8 +38,6 @@ public class BOBR_Move : MonoBehaviour
     //check if BOBR found his enemy
     int foundPOI;
 
-
-
     //Rotation and look
    
     public float maxRotarionSpeed = 800f;
@@ -49,6 +50,8 @@ public class BOBR_Move : MonoBehaviour
     public float counterMovement = 0.175f;
     private float threshold = 0.01f;
 
+
+    public int beaverDMG = 1;
 
     void Awake()
     {
@@ -63,6 +66,19 @@ public class BOBR_Move : MonoBehaviour
         if(other.gameObject.tag == "Ground")
         {
             isGrounded = true;
+        }
+        if(other.gameObject.tag == "Stick")
+        {
+            Stick patyk = other.gameObject.GetComponent<Stick>();
+            if(patyk.isPickedUp) {
+                TakeDMG(patyk.stickDMG);
+            }
+        }
+        if(other.gameObject.tag == "Player")
+        {
+            DogMovement doggo = other.gameObject.GetComponent<DogMovement>();
+            doggo.TakeDMG(beaverDMG);
+
         }
 
     }
@@ -80,6 +96,7 @@ public class BOBR_Move : MonoBehaviour
     public void TakeDMG(float dmg)
     {
         HP -= dmg;
+
         if(HP <= 0)
         {
             POI = transform.parent.GetChild(1).transform;
@@ -91,13 +108,17 @@ public class BOBR_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isGrounded);
         Look();
+        if(stunTimer > 0.0f){
+            stunTimer -= Time.deltaTime;
+        }
     }
     void FixedUpdate()
     {
         CheckDistanceToPOI();
-        Movement();
+        if(stunTimer <= 0.0f){
+            Movement();
+        }
     }
 
 
@@ -109,6 +130,7 @@ public class BOBR_Move : MonoBehaviour
         rb.AddForce(transform.forward * attackForce * 1.5f, ForceMode.Impulse);
         rb.AddForce(transform.up * jumpForce * 1.5f,ForceMode.Impulse);
         
+        stunTimer = stunInterval;
     }
 
 
