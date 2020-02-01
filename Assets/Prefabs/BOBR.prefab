@@ -62,6 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3a066ced6b743146ade52dee532ea2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunStars: {fileID: 0}
+  stunInterval: 5
+  attackInterval: 4
   HP: 100
   POI: {fileID: 0}
   aditionalGravity: 100
@@ -69,12 +72,13 @@ MonoBehaviour:
   attackForce: 330
   attackDelay: 5
   timeToAttack: 0
-  desiredDistToPOI: 50
+  desiredDistToPOI: 200
   nearPOI: 1
   maxRotarionSpeed: 500
   moveSpeed: 2000
   maxSpeed: 15
   counterMovement: 0.175
+  beaverDMG: 1
 --- !u!64 &2284360653121909544
 MeshCollider:
   m_ObjectHideFlags: 0
