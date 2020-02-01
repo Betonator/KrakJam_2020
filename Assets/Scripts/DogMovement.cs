@@ -6,12 +6,14 @@ using Cinemachine;
 public class DogMovement : MonoBehaviour
 {
     Rigidbody dogBody;
+    [SerializeField]
+    private GameObject stunStars;
     public int dogIndex = 0;
     public float dogSpeed = 10f;
     public float rotateSpeed = 5f;
-    private float energy = 0f;
+    public float energy = 0f;
     private float maxEnergy = 100f;
-    private int runningMultiplier = 1;
+    public int runningMultiplier = 1;
     public CinemachineVirtualCamera dogCamera;
     public int maxHP = 2;
     public int currentHP = 2;
@@ -29,10 +31,10 @@ public class DogMovement : MonoBehaviour
         if(stunTimer > 0.0f){
             stunTimer -= Time.deltaTime;
         }
-        if (Input.GetAxis("Sprint" + dogIndex) > 0.5f)
+        if (Input.GetAxis("Sprint" + dogIndex) > 0.0f && energy > 0.0f)
         {
             runningMultiplier = 2;
-            energy -= Time.deltaTime;
+            energy -= Time.deltaTime*4;
             energy = Mathf.Clamp(energy,0.0f, maxEnergy);
         }
         else
@@ -46,6 +48,7 @@ public class DogMovement : MonoBehaviour
     void FixedUpdate()
     {
         if(stunTimer <= 0.0f){
+            stunStars.SetActive(false);
             float horizontal = Input.GetAxis("Horizontal" + dogIndex);
             float vertical = -Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
             if (vertical >= 1.5f)
@@ -63,10 +66,11 @@ public class DogMovement : MonoBehaviour
 
     public void TakeDMG(int dmg) {
         currentHP -= dmg;
-
         if(currentHP <= 0) {
             stunTimer = stunInterval;
             currentHP = maxHP;
+            stunStars.SetActive(true);
+            //DROP STICK HERE ALSO
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class House : MonoBehaviour
 {
     public int houseIndex = 1;
-    private int houseLevel;
+    public int houseLevel;
     public int maxLevel = 4;
 
     //some points BRUH
@@ -34,12 +34,14 @@ public class House : MonoBehaviour
         {
             AddPoints(other.gameObject);
             CheckUpgrade();
+            Destroy(other.gameObject);
         }
     }
 
     public void AddPoints(GameObject Stick)
     {
-        //Wez punkty z patyka
+        points += Stick.GetComponent<Stick>().score;
+        CheckUpgrade();
     }
 
     private void CheckUpgrade()
@@ -59,18 +61,7 @@ public class House : MonoBehaviour
         houseLevel++;
        // Debug.Log("HOUSE LVL " + houseLevel + "     MAX LVL TO: " + maxLevel);
         currentHouse = Instantiate(Houses[houseLevel], transform.position + posOffset, Quaternion.Euler(rotOffset.x, rotOffset.y, rotOffset.z));
-        if(houseLevel>= maxLevel)
-        {
-           // Debug.Log("CO JEST HURWA");
-            LetThisDoggoWin();
-        }
-    }
-
-    public void LetThisDoggoWin()
-    {
-        //JAkiś KOD SUPER BOOM BUCHY
-
-        Debug.Log("Doggo " + houseIndex + " WIN!");
+        CanvasManager.canvasManager.CheckForGameFinish();
     }
 
 
