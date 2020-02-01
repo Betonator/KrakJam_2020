@@ -13,6 +13,11 @@ public class DogMovement : MonoBehaviour
     private float maxEnergy = 100f;
     private int runningMultiplier = 1;
     public CinemachineVirtualCamera dogCamera;
+    public int maxHP = 2;
+    public int currentHP = 2;
+
+    public float stunInterval = 5.0f;
+    private float stunTimer = 0.0f;
 
     void Start()
     {
@@ -21,6 +26,9 @@ public class DogMovement : MonoBehaviour
 
     private void Update()
     {
+        if(stunTimer > 0.0f){
+            stunTimer -= Time.deltaTime;
+        }
         if (Input.GetAxis("Sprint" + dogIndex) > 0.5f)
         {
             runningMultiplier = 2;
@@ -37,17 +45,28 @@ public class DogMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal" + dogIndex);
-        float vertical = -Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
-        if (vertical >= 1.5f)
-        {
-            dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.05f;
+        if(stunTimer <= 0.0f){
+            float horizontal = Input.GetAxis("Horizontal" + dogIndex);
+            float vertical = -Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
+            if (vertical >= 1.5f)
+            {
+                dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0.05f;
+            }
+            else
+            {
+                dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
+            }
+            transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * rotateSpeed);
+            dogBody.velocity = transform.forward*vertical*dogSpeed + new Vector3(0.0f, dogBody.velocity.y, 0.0f);
         }
-        else
-        {
-            dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
+    }
+
+    public void TakeDMG(int dmg) {
+        currentHP -= dmg;
+
+        if(currentHP <= 0) {
+            stunTimer = stunInterval;
+            currentHP = maxHP;
         }
-        transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * rotateSpeed);
-        dogBody.velocity = transform.forward*vertical*dogSpeed + new Vector3(0.0f, dogBody.velocity.y, 0.0f);
     }
 }

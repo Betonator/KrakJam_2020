@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5541299387526706081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5541299387526706083}
+  - component: {fileID: 5541299387526706082}
+  m_Layer: 0
+  m_Name: BUDA_Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5541299387526706083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541299387526706081}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.178177, y: 4.62, z: -9.47}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5541299387526706082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5541299387526706081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43d7f73b18d07443a83f060aed115e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  houseIndex: 1
+  maxLevel: 4
+  pointsToUpgrade: 2
+  posOffset: {x: 0, y: 0, z: 0}
+  rotOffset: {x: 0, y: 0, z: 0}
+  Houses:
+  - {fileID: 5915798591164569448, guid: 2986027eeab0ecd408349c806a873eed, type: 3}
+  - {fileID: 9222464787523367246, guid: e95a937f3e68d094e825724d1993d1d8, type: 3}
+  - {fileID: 1392945001406932579, guid: a75c736568650d540b8b4b3a76c5315d, type: 3}
+  - {fileID: 1531592402302323528, guid: 0b5ed30596c2cf54aaa06aeb065b5e1b, type: 3}
+  - {fileID: 7654081333732351300, guid: d00be3d74270ab54eb85477acf1a7dfa, type: 3}
