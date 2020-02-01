@@ -6,6 +6,8 @@ using Cinemachine;
 public class DogMovement : MonoBehaviour
 {
     Rigidbody dogBody;
+    [SerializeField]
+    private GameObject stunStars;
     public int dogIndex = 0;
     public float dogSpeed = 10f;
     public float rotateSpeed = 5f;
@@ -46,6 +48,7 @@ public class DogMovement : MonoBehaviour
     void FixedUpdate()
     {
         if(stunTimer <= 0.0f){
+            stunStars.SetActive(false);
             float horizontal = Input.GetAxis("Horizontal" + dogIndex);
             float vertical = -Input.GetAxis("Vertical" + dogIndex) * runningMultiplier;
             if (vertical >= 1.5f)
@@ -63,10 +66,11 @@ public class DogMovement : MonoBehaviour
 
     public void TakeDMG(int dmg) {
         currentHP -= dmg;
-
         if(currentHP <= 0) {
             stunTimer = stunInterval;
             currentHP = maxHP;
+            stunStars.SetActive(true);
+            //DROP STICK HERE ALSO
         }
     }
 }

@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 5231250532757587665}
   m_Layer: 0
   m_Name: Samoyed (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -424,10 +424,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d41ac974bd45a40828f37ba89c35a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunStars: {fileID: 6160824896645764103}
   dogIndex: 2
   dogSpeed: 8
   rotateSpeed: 1.2
   dogCamera: {fileID: 4303417811193401746}
+  maxHP: 4
+  currentHP: 2
+  stunInterval: 5
 --- !u!1 &1229627158209093452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1702,7 @@ GameObject:
   - component: {fileID: 1147304969422367672}
   m_Layer: 0
   m_Name: Samoyed
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1760,10 +1764,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d41ac974bd45a40828f37ba89c35a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stunStars: {fileID: 4303417810596835434}
   dogIndex: 1
   dogSpeed: 8
   rotateSpeed: 1.2
   dogCamera: {fileID: 4303417811193401746}
+  maxHP: 4
+  currentHP: 2
+  stunInterval: 5
 --- !u!1 &5354343908807577216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2723,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4303417811348250754}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6160824896645764103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7982465588636447877, guid: 2a0928dc8a8758d429d60703707a4fc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4303417811348250754}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6160824896961299695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2809,6 +2823,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0928dc8a8758d429d60703707a4fc6, type: 3}
+--- !u!1 &4303417810596835434 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7982465588636447877, guid: 2a0928dc8a8758d429d60703707a4fc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 6160824896961299695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4303417810596835435 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7982465588636447876, guid: 2a0928dc8a8758d429d60703707a4fc6,
