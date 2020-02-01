@@ -162,6 +162,8 @@ public class BOBR_Move : MonoBehaviour
 
     private void Look()
     {
+        
+
         Vector3 posLook = POI.position - transform.position;
         posLook.y = 0;
        

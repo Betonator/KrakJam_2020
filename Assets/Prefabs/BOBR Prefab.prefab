@@ -134,6 +134,21 @@ PrefabInstance:
       propertyPath: POI
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1303934201705411769, guid: fedf09ce814f3a0439a4b0def9acb9a9,
+        type: 3}
+      propertyPath: jumpForce
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303934201705411769, guid: fedf09ce814f3a0439a4b0def9acb9a9,
+        type: 3}
+      propertyPath: attackForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303934201705411769, guid: fedf09ce814f3a0439a4b0def9acb9a9,
+        type: 3}
+      propertyPath: nearPOI
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fedf09ce814f3a0439a4b0def9acb9a9, type: 3}
 --- !u!4 &8599351560739163286 stripped
