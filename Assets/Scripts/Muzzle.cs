@@ -8,12 +8,25 @@ public class Muzzle : MonoBehaviour
 {
     private bool isStickPickable = false;
     private Rigidbody pickableStick = null;
-
+    public Transform HeadEnd = null;
     // Update is called once per frame
     void Update()
     {
         if(Input.GetButtonDown("PickUp")) {
             PickUpStick();
+        }
+        if(Input.GetButtonUp("PickUp")) {
+            LoseStick();
+        }
+    }
+
+    private void LoseStick() {
+        if(pickableStick != null) {
+            if(pickableStick.GetComponent<FixedJoint>().connectedBody == this.GetComponent<Rigidbody>()){
+                FixedJoint fix = pickableStick.GetComponent<FixedJoint>();
+                Destroy(fix);
+                pickableStick = null;
+            }
         }
     }
 
@@ -29,10 +42,12 @@ public class Muzzle : MonoBehaviour
             }
 
             Transform closestPoint = FindNearestPoint(otherPoints.ToArray());
-            pickableStick.transform.position += Vector3.up * 1.0f;
-            pickableStick.transform.position -= closestPoint.localPosition;
+            pickableStick.transform.position = HeadEnd.position;
+            pickableStick.transform.rotation = HeadEnd.rotation;
 
-            FixedJoint fix = pickableStick.GetComponentInChildren<FixedJoint>();
+            pickableStick.transform.position = closestPoint.position;
+
+            FixedJoint fix = pickableStick.gameObject.AddComponent<FixedJoint>() as FixedJoint;
             fix.connectedBody = this.GetComponent<Rigidbody>();
             
             isStickPickable = false;
@@ -54,9 +69,9 @@ public class Muzzle : MonoBehaviour
         return closestPoint;
     }
 
-    private void OnTriggerEnter(Collider collider)
+    private void OnTriggerStay(Collider collider)
     {
-        if (collider.tag == "Stick") {
+        if (collider.tag == "Stick" && pickableStick == null) {
             isStickPickable = true;
             pickableStick = collider.gameObject.GetComponent<Rigidbody>();
         }
