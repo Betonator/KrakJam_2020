@@ -426,13 +426,19 @@ MonoBehaviour:
   stunStars: {fileID: 6160824896645764103}
   dogIndex: 2
   dogSpeed: 15
-  rotateSpeed: 1.3
+  rotateSpeed: 3
   energy: 0
   runningMultiplier: 1
   dogCamera: {fileID: 4303417811193401746}
+  extraGrav: 20000
+  moveSpeed: 112500
+  maxSpeed: 20
+  counterMovement: 0.175
+  actualMaxSpeed: 20
   maxHP: 4
   currentHP: 2
   stunInterval: 5
+  stunTimer: 0
 --- !u!1 &1229627158209093452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,13 +1773,19 @@ MonoBehaviour:
   stunStars: {fileID: 4303417810596835434}
   dogIndex: 1
   dogSpeed: 15
-  rotateSpeed: 1.3
+  rotateSpeed: 3
   energy: 0
   runningMultiplier: 1
   dogCamera: {fileID: 4303417811193401746}
+  extraGrav: 20000
+  moveSpeed: 112500
+  maxSpeed: 20
+  counterMovement: 0.175
+  actualMaxSpeed: 20
   maxHP: 4
   currentHP: 2
   stunInterval: 5
+  stunTimer: 0
 --- !u!1 &5354343908807577216
 GameObject:
   m_ObjectHideFlags: 0
