@@ -197,7 +197,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5545785808187055446}
-  - component: {fileID: 1694152563}
   m_Layer: 0
   m_Name: Armature.001
   m_TagString: Untagged
@@ -220,25 +219,6 @@ Transform:
   m_Father: {fileID: 4158883021572916884}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1694152563
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533371704246122231}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f520a9018dde25242b8de1351efec0d6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &771644262182269956
 GameObject:
   m_ObjectHideFlags: 0
@@ -376,9 +356,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4158883021572916884}
+  - component: {fileID: 5231250532757587671}
   - component: {fileID: 5231250532757587670}
   - component: {fileID: 5231250532757587665}
-  - component: {fileID: 1452318403566982162}
   m_Layer: 0
   m_Name: Samoyed (1)
   m_TagString: Player
@@ -402,6 +382,19 @@ Transform:
   m_Father: {fileID: 4303417809562780790}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &5231250532757587671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147304967902016647}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.1908586, z: 2.958352}
+  m_Center: {x: 0, y: 0.13482034, z: 0.7256789}
 --- !u!54 &5231250532757587670
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -445,20 +438,7 @@ MonoBehaviour:
   maxHP: 4
   currentHP: 2
   stunInterval: 5
---- !u!64 &1452318403566982162
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147304967902016647}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1550514412580984892, guid: e13959e1907b4ef44b23783e567e4fdc, type: 3}
+  stunTimer: 0
 --- !u!1 &1229627158209093452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1125,8 +1105,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303417810318185717}
-  m_LocalRotation: {x: -0.122183226, y: 0.000000018344192, z: -0.00000018317316, w: -0.99250764}
-  m_LocalPosition: {x: 5.011963, y: -2.9745407, z: -1.126831}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -514.663, y: -107.35, z: -265.55923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303417809562780790}
@@ -1267,8 +1247,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303417810930655166}
-  m_LocalRotation: {x: -0.122183226, y: 0.00000013025186, z: -0.00000019643043, w: -0.99250764}
-  m_LocalPosition: {x: -3.9305725, y: -2.9745407, z: -1.126831}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -514.663, y: -107.35, z: -265.55923}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303417809562780790}
@@ -1504,7 +1484,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 829717457228230719}
-  - component: {fileID: 1837452507}
   m_Layer: 0
   m_Name: Armature.001
   m_TagString: Untagged
@@ -1527,25 +1506,6 @@ Transform:
   m_Father: {fileID: 9133998767238999037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &1837452507
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4617249357810801566}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f520a9018dde25242b8de1351efec0d6, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5029674458765146603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,9 +1703,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9133998767238999037}
+  - component: {fileID: 1147304969422367678}
   - component: {fileID: 1147304969422367679}
   - component: {fileID: 1147304969422367672}
-  - component: {fileID: 782952928}
   m_Layer: 0
   m_Name: Samoyed
   m_TagString: Player
@@ -1769,6 +1729,19 @@ Transform:
   m_Father: {fileID: 4303417809562780790}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1147304969422367678
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5231250534026189294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.1908586, z: 2.958352}
+  m_Center: {x: 0, y: 0.13482034, z: 0.7256789}
 --- !u!54 &1147304969422367679
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1812,20 +1785,7 @@ MonoBehaviour:
   maxHP: 4
   currentHP: 2
   stunInterval: 5
---- !u!64 &782952928
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5231250534026189294}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -1550514412580984892, guid: e13959e1907b4ef44b23783e567e4fdc, type: 3}
+  stunTimer: 0
 --- !u!1 &5354343908807577216
 GameObject:
   m_ObjectHideFlags: 0
@@ -2771,15 +2731,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a0928dc8a8758d429d60703707a4fc6, type: 3}
---- !u!1 &6160824896645764103 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7982465588636447877, guid: 2a0928dc8a8758d429d60703707a4fc6,
-    type: 3}
-  m_PrefabInstance: {fileID: 4303417811348250754}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6160824896645764102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7982465588636447876, guid: 2a0928dc8a8758d429d60703707a4fc6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4303417811348250754}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6160824896645764103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7982465588636447877, guid: 2a0928dc8a8758d429d60703707a4fc6,
     type: 3}
   m_PrefabInstance: {fileID: 4303417811348250754}
   m_PrefabAsset: {fileID: 0}
