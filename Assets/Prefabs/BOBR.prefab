@@ -70,8 +70,8 @@ MonoBehaviour:
   HP: 100
   POI: {fileID: 0}
   aditionalGravity: 100
-  jumpForce: 2.5
-  attackForce: 8
+  jumpForce: 1.25
+  attackForce: 4
   attackDelay: 5
   timeToAttack: 0
   desiredDistToPOI: 200
