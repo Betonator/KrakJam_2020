@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/CINEMACHINE.unity
+    guid: cc1d453842ff0ac4c82d1ddd1a847407
   m_configObjects: {}
