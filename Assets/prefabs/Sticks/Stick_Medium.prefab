@@ -126,7 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 100
   isPickedUp: 0
-  stickDMG: 25
+  stickDMG: 50
 --- !u!64 &2461299322148824468
 MeshCollider:
   m_ObjectHideFlags: 0

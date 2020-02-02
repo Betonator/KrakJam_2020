@@ -593,7 +593,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 150
   isPickedUp: 0
-  stickDMG: 50
+  stickDMG: 100
 --- !u!1 &8604439707598283080
 GameObject:
   m_ObjectHideFlags: 0
