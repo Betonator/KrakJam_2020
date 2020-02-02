@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 1303934201705411768}
   - component: {fileID: 1303934201705411748}
   - component: {fileID: 1303934201705411769}
-  - component: {fileID: 2284360653121909544}
   - component: {fileID: -650529539631717940}
+  - component: {fileID: 3449905852707455269}
   m_Layer: 11
   m_Name: BOBR
   m_TagString: BOBR
@@ -88,20 +88,6 @@ MonoBehaviour:
   maxSpeed: 15
   counterMovement: 0.175
   beaverDMG: 1
---- !u!64 &2284360653121909544
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303934201705411747}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: 2cc9b7f713bb50745973280607ab2170, type: 3}
 --- !u!82 &-650529539631717940
 AudioSource:
   m_ObjectHideFlags: 0
@@ -198,6 +184,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!136 &3449905852707455269
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303934201705411747}
+  m_Material: {fileID: 13400000, guid: de7d172c85b17824c9fa972ce19cc428, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.7
+  m_Height: 3
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.048938513, z: 0.24764824}
 --- !u!1001 &1969176687865837299
 PrefabInstance:
   m_ObjectHideFlags: 0

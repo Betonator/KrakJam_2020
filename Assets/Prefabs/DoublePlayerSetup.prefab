@@ -123,13 +123,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 15
-    positionDamper: 7
+    positionSpring: 45
+    positionDamper: 15
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 15
-    positionDamper: 7
+    positionSpring: 45
+    positionDamper: 15
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogIndex: 2
-  speed: 125
+  speed: 500
 --- !u!65 &4303417810470977551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1126,8 +1126,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303417810318185717}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -507.2, y: -108.7, z: -241.9}
+  m_LocalRotation: {x: -0.122183226, y: 0.000000018344192, z: -0.00000018317316, w: -0.99250764}
+  m_LocalPosition: {x: 5.011963, y: -2.9745483, z: -1.126831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303417809562780790}
@@ -1268,8 +1268,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303417810930655166}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -507.2, y: -108.7, z: -241.9}
+  m_LocalRotation: {x: -0.120375514, y: -0.1700976, z: 0.020939782, w: -0.97782314}
+  m_LocalPosition: {x: -5.2402344, y: -2.9745483, z: -0.65545654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303417809562780790}
@@ -1670,13 +1670,13 @@ ConfigurableJoint:
   m_RotationDriveMode: 0
   m_AngularXDrive:
     serializedVersion: 3
-    positionSpring: 15
-    positionDamper: 7
+    positionSpring: 45
+    positionDamper: 15
     maximumForce: 3.4028233e+38
   m_AngularYZDrive:
     serializedVersion: 3
-    positionSpring: 15
-    positionDamper: 7
+    positionSpring: 45
+    positionDamper: 15
     maximumForce: 3.4028233e+38
   m_SlerpDrive:
     serializedVersion: 3
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogIndex: 1
-  speed: 125
+  speed: 500
 --- !u!65 &8993097865347034470
 BoxCollider:
   m_ObjectHideFlags: 0
