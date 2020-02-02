@@ -6,6 +6,8 @@ public class BOBR_Move : MonoBehaviour
 {
     [SerializeField]
     private GameObject stunStars;
+    [SerializeField]
+    private Transform spawnPoint;
 
     bool alive;
 
@@ -139,7 +141,7 @@ public class BOBR_Move : MonoBehaviour
 
         if(HP <= 0)
         {
-            POI = transform.parent.GetChild(1).transform;
+            POI = spawnPoint;
             alive = false;
         }
     }

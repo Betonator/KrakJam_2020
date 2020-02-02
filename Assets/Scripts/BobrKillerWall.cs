@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BobrKillerWall : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("BOBR"))
+        if (collision.collider.CompareTag("BOBR"))
         {
-            other.GetComponent<BOBR_Move>().TakeDMG(1000000f);
+            collision.collider.GetComponent<BOBR_Move>().TakeDMG(1000000f);
         }
     }
 }
