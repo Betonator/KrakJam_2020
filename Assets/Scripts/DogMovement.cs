@@ -72,11 +72,11 @@ public class DogMovement : MonoBehaviour
             {
                 dogCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>().m_AmplitudeGain = 0f;
             }
-            float dupa = 1;
+            float rotationBuffer = 1;
             float currentSpeed = dogBody.velocity.magnitude;
-            dupa = 1.2f - currentSpeed/actualMaxSpeed;
+            rotationBuffer = 1.2f - currentSpeed/actualMaxSpeed;
 
-            transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * rotateSpeed * dupa);
+            transform.Rotate(new Vector3(0.0f, horizontal, 0.0f) * rotateSpeed * rotationBuffer);
 
         }
 
