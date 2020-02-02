@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class House : MonoBehaviour
 {
@@ -26,6 +27,9 @@ public class House : MonoBehaviour
         points = 0;
         
         currentHouse = Instantiate(Houses[0], transform.position + posOffset, Quaternion.Euler(rotOffset.x,rotOffset.y,rotOffset.z));
+
+        Text text = this.GetComponentInChildren<Text>();
+        text.material.renderQueue = 4000;
     }
 
     private void OnTriggerEnter(Collider other)
