@@ -2868,6 +2868,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1147304969422367678, guid: 6513230ea9c515145b2f5c7a8922a39d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1147304969422367679, guid: 6513230ea9c515145b2f5c7a8922a39d,
         type: 3}
       propertyPath: m_Constraints
@@ -3012,6 +3017,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 5231250532757587671, guid: 6513230ea9c515145b2f5c7a8922a39d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6982795824549897093, guid: 6513230ea9c515145b2f5c7a8922a39d,
         type: 3}
