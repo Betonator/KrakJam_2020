@@ -65,6 +65,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stunStars: {fileID: 8472539646487511670}
   spawnPoint: {fileID: 0}
+  audio:
+  - {fileID: 8300000, guid: e9300728571d7c04a8b1c123f74a2348, type: 3}
+  - {fileID: 8300000, guid: 4e4bc48c6c5c6ee429700af48b0f35f6, type: 3}
+  - {fileID: 8300000, guid: a9082177e635fc9459a2f78db6ee4936, type: 3}
+  - {fileID: 8300000, guid: e5793a3eef4ea1240a61a94480cf189d, type: 3}
+  - {fileID: 8300000, guid: 26619b71c1c915e4f83da55798aeabc1, type: 3}
   stunInterval: 5
   attackInterval: 4
   HP: 100

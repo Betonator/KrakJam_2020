@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/CINEMACHINE.unity
-    guid: cc1d453842ff0ac4c82d1ddd1a847407
+    path: Assets/Scenes/Teren.unity
+    guid: f234e9552c087c640a5f13d1139db16a
   m_configObjects: {}
