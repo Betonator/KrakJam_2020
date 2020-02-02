@@ -457,7 +457,7 @@ MonoBehaviour:
   actualMaxSpeed: 20
   maxHP: 4
   currentHP: 2
-  stunInterval: 5
+  stunInterval: 2
   stunTimer: 0
   isResting: 0
 --- !u!1 &1229627158209093452
@@ -1126,8 +1126,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303417810318185717}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -507.2, y: -108.7, z: -241.9}
+  m_LocalRotation: {x: -0.122183226, y: 0.000000018344192, z: -0.00000018317316, w: -0.99250764}
+  m_LocalPosition: {x: 5.011963, y: -2.9745483, z: -1.126831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303417809562780790}
@@ -1268,8 +1268,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4303417810930655166}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -507.2, y: -108.7, z: -241.9}
+  m_LocalRotation: {x: -0.122183226, y: 0.00000013025186, z: -0.00000019643043, w: -0.99250764}
+  m_LocalPosition: {x: -3.9305725, y: -2.9745483, z: -1.126831}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4303417809562780790}
@@ -1825,7 +1825,7 @@ MonoBehaviour:
   actualMaxSpeed: 20
   maxHP: 4
   currentHP: 2
-  stunInterval: 5
+  stunInterval: 2
   stunTimer: 0
   isResting: 0
 --- !u!1 &5354343908807577216
