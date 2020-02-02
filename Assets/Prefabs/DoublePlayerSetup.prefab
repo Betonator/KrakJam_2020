@@ -63,7 +63,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.0029480457, y: 1.542736, z: 1.9238443}
+  m_ConnectedAnchor: {x: 0.0029480457, y: 1.542736, z: 1.9238436}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogIndex: 2
-  speed: 50
+  speed: 125
 --- !u!65 &4303417810470977551
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -393,7 +393,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1147304967902016647}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0, y: 0.17138498, z: -0, w: 0.98520416}
   m_LocalPosition: {x: -3.2305481, y: -5.9745445, z: 2.873168}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -401,7 +401,7 @@ Transform:
   - {fileID: 6802177714169550522}
   m_Father: {fileID: 4303417809562780790}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 19.737001, z: 0}
 --- !u!65 &5231250532757587671
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1707,7 +1707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dogIndex: 1
-  speed: 50
+  speed: 125
 --- !u!65 &8993097865347034470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2336,8 +2336,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6982795824549897095}
-  m_LocalRotation: {x: -0.122183226, y: 0.00000013025186, z: -0.00000019643043, w: -0.99250764}
-  m_LocalPosition: {x: -3.9305725, y: -2.9745483, z: -1.126831}
+  m_LocalRotation: {x: -0.120375514, y: -0.1700976, z: 0.020939782, w: -0.97782314}
+  m_LocalPosition: {x: -5.2402344, y: -2.9745483, z: -0.65545654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6982795824057315823}
