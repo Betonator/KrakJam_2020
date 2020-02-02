@@ -8,6 +8,9 @@ public class BOBR_Move : MonoBehaviour
     private GameObject stunStars;
 
     bool alive;
+
+    public AudioClip[] audio;
+
     bool isGrounded;
 
     public float stunInterval = 5.0f;
@@ -38,6 +41,7 @@ public class BOBR_Move : MonoBehaviour
     //finding POI range
     public float desiredDistToPOI = 100f;
     public float nearPOI = 2f;
+    AudioSource ASource;
 
     //check if BOBR found his enemy
     int foundPOI;
@@ -61,8 +65,14 @@ public class BOBR_Move : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         isGrounded = false;
+        ASource = GetComponent<AudioSource>();
 
+    }
 
+    public void PlayAWOLOLO()
+    {
+        int clipAudio =(int) Mathf.Floor(Random.Range(0,audio.Length));
+        ASource.PlayOneShot(audio[clipAudio]);
     }
 
     private void OnCollisionEnter(Collision other)
@@ -166,7 +176,7 @@ public class BOBR_Move : MonoBehaviour
         isGrounded = false;
         rb.AddForce(transform.forward * attackForce * 1.5f, ForceMode.Impulse);
         rb.AddForce(transform.up * jumpForce * 1.5f,ForceMode.Impulse);
-        
+        PlayAWOLOLO();
         stunTimer = stunInterval;
     }
 
